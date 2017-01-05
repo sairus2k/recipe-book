@@ -6,9 +6,11 @@ import { Recipe } from '../recipe';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [];
+  recipes: Recipe[] = [
+    new Recipe('Schnitzel', 'Very tasty', 'http://lorempixel.com/200/200/cats/1'),
+    new Recipe('Summer Salad', 'Okayish', 'http://lorempixel.com/200/200/cats/2')
+  ];
   @Output() recipeSelected: EventEmitter<Recipe> = new EventEmitter<Recipe>();
-  recipe = new Recipe('Dummy', 'Dummy', 'http://lorempixel.com/200/200/cats/1');
 
   constructor() { }
 
